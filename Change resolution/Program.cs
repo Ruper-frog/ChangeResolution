@@ -162,8 +162,10 @@ namespace Change_resolution
         }
         static void ChangeDPI()
         {
+            Console.WriteLine("Please Enter The Directory");
+
             // Load the image from a file
-            Bitmap originalImage = new Bitmap("C:\\Users\\USER\\OneDrive\\שולחן העבודה\\New folder\\wallpapersden.com_high-tech-earth_2560x1440.jpg");
+            Bitmap originalImage = new Bitmap(Console.ReadLine());
 
             // Set the desired DPI
             int dpi = 40;
@@ -178,8 +180,10 @@ namespace Change_resolution
             EncoderParameters encoderParams = new EncoderParameters(1);
             encoderParams.Param[0] = new EncoderParameter(Encoder.Quality, 90L);
 
+            Console.WriteLine("Please Enter The Directory You Want To Save The Image");
+
             // Save the image with the new DPI and encoder parameters
-            originalImage.Save("C:\\Users\\USER\\OneDrive\\שולחן העבודה\\New folder (2)\\image.jpg", jpegCodec, encoderParams);
+            originalImage.Save(Console.ReadLine(), jpegCodec, encoderParams);
 
             // Dispose of the original image
             originalImage.Dispose();
